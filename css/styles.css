@@ -1,0 +1,23 @@
+.jumbotron {
+  /* justify-content: center; */
+  text-align: center;
+
+}
+
+.container {
+  margin-top: 20px;
+}
+
+
+
+/* .form-group {
+  width: 200px;
+} */
+
+label{
+  margin-left: 15em;
+}
+
+/* input{
+  margin-left: 25em;
+} */

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery.js"></script>
+    <script src="js/scripts.js"></script>
+    <title>Places you have ben</title>
+  </head>
+  <body>
+    <div class="container">
+      <form id="placesForm">
+        <div class="jumbotron">
+
+        <h1>My Places</h1>
+
+        <div class="form-group" id="location">
+          <label for="country">Location:</label>
+          <input type="text" id="locationInput">
+        </div>
+
+        <div class="form-group" id="landmark">
+          <label for="landmark">Landmark:</label>
+          <input type="text" id="landmarkInput">
+        </div>
+
+        <div class="form-group" id="time">
+          <label for="time">Time of the year:</label>
+          <input type="text" id="timeInput">
+        </div>
+
+        <div class="form-group" id="notes">
+          <label for="notes">Notes:</label>
+          <input type="text" id="notesInput">
+        </div>
+        <button type="submit" class="btn btn-info">Submit</button>
+        </div>
+      </form>
+
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="jumbotron" id="places">
+            <button id="chicago">Chicago</button>
+            <button id="miami">Miami</button>
+            <button id="newYork">New York</button>
+          </div>
+
+      </div>
+        <div class="col-md-6">
+          <div class="jumbotron">
+            <ul id="info">
+              <li id="chicagoInfo"></li>
+              <li id="miamiInfo"></li>
+              <li id="newYorkInfo"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
