@@ -1,16 +1,3 @@
-// location, landmarks, time of year, notes
-// Business Logic
-// function PlaceDisplay(){
-// this.places = [],
-// this.city = 0
-// }
-//
-// PlaceDisplay.prototype.showInfo = function(info){
-//   place.
-// }
-
-var places = [];
-
 function Place(location, landmarks, timeOfYear, notes)  {
   this.location = location;
   this.landmarks = landmarks;
@@ -22,14 +9,6 @@ Place.prototype.info = function() {
   return this.location+ ', ' + this.landmarks+ ', ' + this.timeOfYear + ', ' + this.notes;
 }
 
-// function printObject(Object) {
-//   Object.keys().forEach(function(){
-//
-//   })
-//
-//
-// }
-
 var chicago = new Place('Chicago', ['Wrigley Field, Wills Tower, Lake Michigan'], ['spring', 'summer'], "Dont eat too many hotdogs");
 
 var miami = new Place('Miami', ['South Beach, Doral, Miami Beach'], ['fall', 'winter'], "Bring sun screen");
@@ -40,13 +19,10 @@ var newYork = new Place('New York', ['Brooklyn', 'Queens', 'Manhattan'], ['sprin
 
 // front end logic
 $(document).ready(function() {
-  var locationInput;
-  var newId;
   var newPlace = new Place("location", "test", "test", "test");
   $("form#placesForm").submit(function(event){
     event.preventDefault();
-    console.log("Hello!");
-    locationInput = $("#locationInput").val();
+    var locationInput = $("#locationInput").val();
     var landmarkInput = $("#landmarkInput").val();
     var timeInput = $("#timeInput").val();
     var notesInput = $("#notesInput").val();
@@ -56,12 +32,12 @@ $(document).ready(function() {
     newPlace.timeOfYear = timeInput,
     newPlace.notes = notesInput;
 
-    newId = locationInput;
-    $("#places").append(`<button id=${newId}> ${newPlace.location}</button>`);
+    $("#places").append(`<button id=${locationInput}> ${newPlace.location}</button>`);
 
-    console.log("New place inside: ", newPlace, typeof(newPlace));
+    $(`button#${locationInput}`).click(function(){
+      $('#info').append('<li>' + newPlace.info() + '</li>');
+    });
   });
-  console.log("New place outside: ", newPlace, typeof(newPlace));
 
   $("button#chicago").click(function() {
     $("#chicagoInfo").text(chicago.info());
@@ -69,15 +45,8 @@ $(document).ready(function() {
   $("button#miami").click(function() {
     $("#miamiInfo").text(miami.info());
   });
-  $("button#newYork").click( function() {alert("new york yo")});
-  $(`button#${newId}`).click(function(){
-    $('#info').append('<li>' + "test" + '</li>');
-
+  $("button#newYork").click(function() {
+    $("#newYorkInfo").text(newYork.info());
+    $('#info').append('<li>Testing!</li>');
   });
-
-  // (function(){
-  //   $('#info').append('<li>' + newPlace.info() + '</li>');
-  // });
-
-
 });
